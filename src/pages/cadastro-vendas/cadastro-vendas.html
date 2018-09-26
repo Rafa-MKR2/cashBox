@@ -1,0 +1,50 @@
+<!--
+  Generated template for the CadastroVendasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Cadastrar nova venda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+<br>
+
+    <ion-item>
+      <ion-label floating >Cliente nome</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente"  name="title"></ion-input>
+    </ion-item>
+ 
+<br>
+      <ion-item>
+       <ion-label >Data da venda</ion-label>
+        <ion-datetime dateFormat="DD/MM/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="dataVenda"></ion-datetime>
+      </ion-item>
+<br>
+
+    <ion-item>
+      <ion-label floating>Breve Descrição</ion-label>
+      <ion-textarea [(ngModel)]="descricao" name="description"></ion-textarea>
+    </ion-item>
+
+
+
+   
+
+
+      <ion-fab top right edge>
+          <button ion-fab (click)="declararVenda()" color="primary">
+            <ion-icon name="send"></ion-icon>
+          </button>
+        </ion-fab>
+
+</ion-content>

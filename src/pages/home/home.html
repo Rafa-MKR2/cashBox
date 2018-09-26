@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button  ion-button menuToggle>
+      <ion-icon  name="menu"></ion-icon>
+    </button>
+    
+    <ion-title> Inicio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+
+<br>
+<br>
+
+  <ion-list>
+
+      <ion-searchbar
+      [(ngModel)]="pesquisaHome"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="buscarItem()"
+      placeholder="Buscar produtos"
+      ></ion-searchbar>
+
+
+<div padding *ngIf="resultadosView.length>0" ><h6 style="color:blue;">itens relacionado a sua pesquisa!:</h6></div>
+<div padding *ngIf="resultadosView.length==0" ><img src="../../assets/img/lupa.png" alt=""></div>
+
+<ion-item *ngFor="let produto of resultadosView">
+
+    <button ion-item color="balanced" >
+         
+        <h2>{{produto.nome}}</h2>
+        <p>Quantidade: {{produto.quantidade}}</p>
+        <ion-badge  color="secondary" item-end>R${{produto.preco}}</ion-badge>
+
+
+        <ion-note style="font-size: smaller; ">
+            codigo: {{produto.codigo}}
+           </ion-note>
+      </button>
+</ion-item>
+
+
+  </ion-list>
+
+
+  <ion-fab top right edge>
+
+    <button ion-fab  (click)="carrinho()" color="secondary">
+      <ion-icon   style="position: absolute;" name="cart"></ion-icon>
+    </button>
+
+    <ion-badge   style="position:absolute; margin-top: -12px; z-index: 50; margin-right: 15%; " color="danger"  >3</ion-badge>
+  </ion-fab>
+
+</ion-content>

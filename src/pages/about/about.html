@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title >
+      Vendas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+
+      <ion-item no-lines *ngFor="let venda of vendas | async">
+    <ion-card >
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/img/appicon.png">
+          </ion-avatar>
+          <h2>{{venda.Autor}}</h2>
+          <p>{{ venda.data }}</p>
+        </ion-item>
+      
+      
+        <ion-card-content  style="text-align: justify; overflow: hidden;  padding-right: 5; ">
+          <p >
+            {{venda.desc}}
+          </p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button  color="secondary" ion-button icon-start clear small>
+              <ion-icon name="medal"></ion-icon>
+              <div>Verificar</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button (click)="ItemVendidos(venda.produtos)" ion-button icon-start clear small>
+              <ion-icon name="basket"></ion-icon>
+              <div>Total</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+             {{venda.hora}}
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+    </ion-item>
+
+</ion-content>

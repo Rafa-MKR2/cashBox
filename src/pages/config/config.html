@@ -1,0 +1,60 @@
+<ion-menu [content]="mycontent">
+  <ion-content class="textCenter">
+    
+   
+      <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+     
+    </div>
+  </div>
+        
+      <br>
+
+    <ion-list>
+        <button ion-item color="none" >
+          <ion-icon name="person" item-left></ion-icon>
+         {{usuario}}
+        </button >
+
+        <button ion-item color="none" >
+            <ion-icon name="calculator" item-left></ion-icon>
+            Minhas Vendas
+          </button >
+
+          <button (click)="ProdutosPage()" ion-item color="none" >
+                <ion-icon  name="pricetags" item-left></ion-icon>
+               Produtos
+              </button >
+
+              <button ion-item color="none" >
+                    <ion-icon name="bulb" item-left></ion-icon>
+                   Sugestões
+                  </button >
+
+          <button ion-item color="none" >
+            <ion-icon name="settings" item-left></ion-icon>
+            Configurações
+          </button >
+
+
+        <button ion-item >             
+                <ion-icon name="notifications" item-left></ion-icon>
+              <label>Notificações</label>  
+        </button>
+
+          <button (click)="logOut()" ion-item color="none" >
+            <ion-icon name="exit" item-left></ion-icon>
+            Sair
+          </button >
+    
+
+
+        </ion-list>
+
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
